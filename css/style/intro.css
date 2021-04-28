@@ -1,0 +1,25 @@
+/******************Layout*********/
+
+.text-red{
+    color: red;
+}
+.fs-14{
+    font-size: 14px;
+}
+.fs-20{
+    font-size: 20px;
+}
+.fs-30{
+    font-size: 30px;
+    
+}
+.ff-times{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#senpai{
+    border: solid;
+    border-color: royalblue;
+}
+h1,h2,h3,h4,h5{
+    color: slateblue;
+}

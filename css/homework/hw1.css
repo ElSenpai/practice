@@ -1,0 +1,17 @@
+.middle{
+    text-align: center;
+    list-style-position: inside;
+   
+}
+.red{
+    color: red;
+}
+a{
+    margin-left: 8px;
+}
+.purple{
+    color: purple;
+}
+#ts-12{
+    font-size: 12px;
+}

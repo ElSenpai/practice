@@ -1,0 +1,61 @@
+h4 {
+    color: blueviolet;
+    font-size: 44px;
+}
+ /* Tekli yorum satırı */  
+     
+ p {
+   color: red;  /* Metin rengini kırmızı yap*/
+}
+/* Çoklu yorum
+satırı bu 
+şekilde */
+p {
+  color: red;
+ }
+ .p1 {
+    font-family: "Times New Roman";
+   }
+
+   .p2 {
+    font-family: Arial;
+   }
+
+   .p3 {
+    font-family: monospace;
+   }
+   p.normal {
+    font-style: normal;
+   }
+
+   p.italic {
+    font-style: italic;
+   }
+
+   p.oblique {
+    font-style: oblique;
+   }
+   h1 {
+    font-size: 40px;
+   }
+  
+   h2 {
+    font-size: 30px;
+   }
+
+   p {
+    font-size: 14px;
+   }
+  /*
+   h1 {
+    font-size: 2.5em;  40px/16=2.5em 
+   }
+
+   h2 {
+    font-size: 1.875em;  30px/16=1.875em 
+   }  
+
+   p {
+    font-size: 0.875em;  14px/16=0.875em 
+   }
+   */
