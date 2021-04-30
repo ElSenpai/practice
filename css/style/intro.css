@@ -20,6 +20,46 @@
     border: solid;
     border-color: royalblue;
 }
-h1,h2,h3,h4,h5{
+/* h1,h2,h3,h4,h5{
     color: slateblue;
+} */
+.color-blue .fw-bold{
+    color: blue;
+    font-weight: bold;
+}
+
+ul>li:first-child{
+    color: crimson;
+    font-weight: bold;
+}
+article>h1:first-child{
+    color: darkgoldenrod;
+}
+ul>li:last-child{
+    color: cadetblue;
+    text-shadow: currentColor;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+}
+li:nth-child(odd){
+ color: darkgreen;
+ font-weight: bolder;
+}
+li:nth-child(even){
+    color: rgb(156, 40, 40);
+    font-weight: bolder;
+   }
+.box{
+   height: 200px;
+   width: 400px;
+   padding: 10px;
+   margin-top: 10px;
+   float: left;
+}
+   
+.bg-red{
+    background-color: red;
+}
+.bg-green{
+    background-color: green;
 }
