@@ -5,11 +5,13 @@ const Example = (props) => {
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleNavbar = () => setCollapsed(!collapsed);
+  
+  
 
   return (
     <div>
-      <Navbar color="faded" light>
-        <NavbarBrand href="/" className="mr-auto">reactstrap</NavbarBrand>
+      <Navbar  color="success" light>
+        <NavbarBrand  href="/" className="mr-auto">reactstrap</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
@@ -22,8 +24,10 @@ const Example = (props) => {
           </Nav>
         </Collapse>
       </Navbar>
+     
     </div>
   );
 }
+
 
 export default Example;

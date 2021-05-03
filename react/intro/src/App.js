@@ -1,26 +1,30 @@
 import CategoryList from "./CategoryList";
 import Navi from "./Navi";
 import ProductList from "./ProductList";
-import { Button } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 
 function App() {
+  let productInfo={title:"Product List",baskabisey:"bişey"}
+  let categoryInfo={title:"Category List"}
   return (
     <div >
-      <container>
-        <div class="col-md-12">
-        <Navi></Navi>
-       </div>  <row >
-         <div class="col-md-6">
-       <CategoryList></CategoryList>   
-     
-       <ProductList></ProductList>
-       </div> </row>
-       
-      </container>
+      <Container>
+         <Navi />
+        
+        <Row >
+          <Col xs="4">
+            <CategoryList info={categoryInfo} />
+          </Col><Col xs="8">
+           <ProductList info={productInfo} />
+          </Col>
+          </Row>
+      </Container>
     </div>
-    
+
   );
 }
+
+
 
 export default App;
