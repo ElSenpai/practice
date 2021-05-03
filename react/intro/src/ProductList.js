@@ -5,7 +5,7 @@ export default class ProductList extends Component {
     render() {
         return (
             <div>
-                <h3>{this.props.info.baskabisey}</h3>
+                <h3>{this.props.currentCategory}</h3>
                
                 <Table dark>
                     <thead>
