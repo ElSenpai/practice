@@ -1,33 +1,38 @@
-import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-
-const Example = (props) => {
-  const [collapsed, setCollapsed] = useState(true);
-
-  const toggleNavbar = () => setCollapsed(!collapsed);
+import React, { Component } from 'react'
+import {
   
+  Navbar,
   
-
-  return (
-    <div>
-      <Navbar  color="success" light>
-        <NavbarBrand  href="/" className="mr-auto">reactstrap</NavbarBrand>
-        <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-        <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar>
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  
+  NavbarText
+} from 'reactstrap';
+import CartSummary from './CartSummary';
+export default class Navi extends Component {
+  render() {
+    return (
+      <div>
+       
+        <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        
+        
+          <Nav className="mr-auto" navbar>
             <NavItem>
               <NavLink href="/components/">Components</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
             </NavItem>
+            <CartSummary removeFromCart={this.props.removeFromCart} cart={this.props.cart}/>
           </Nav>
-        </Collapse>
+          <NavbarText>Simple Text</NavbarText>
+      
       </Navbar>
-     
-    </div>
-  );
+      </div>
+    )
+  }
 }
-
-
-export default Example;

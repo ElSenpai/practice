@@ -6,9 +6,40 @@ import { Container, Row, Col } from 'reactstrap';
 import { Component } from "react";
 
 export default class App extends Component{
-  state={currentCategory:""}
+  state={currentCategory:"",products:[],cart:[]}
   changeCategory=(category)=>{
-    this.setState({currentCategory:category.categoryName})
+    this.setState({currentCategory:category.categoryName});
+    this.getProducts(category.id);
+ }
+
+ componentDidMount(){
+   this.getProducts();
+ }
+ addToCart=(product)=>{
+  let newCart=this.state.cart;
+  var addedItem= newCart.find(c=>c.product.id===product.id);
+  if(addedItem){
+    addedItem.quantity+=1;
+
+  }else{
+     newCart.push({product:product,quantity:1});
+  }
+ 
+  this.setState({cart:newCart});
+}
+removeFromCart=(product)=>{
+  let newCart=this.state.cart.filter(c=>c.product.id!==product.id);
+  this.setState({cart:newCart})
+}
+
+ getProducts=categoryId=>{
+   let url="http://localhost:3000/products";
+   if(categoryId){
+    url+="?categoryId="+categoryId;
+   }
+  fetch(url)
+  .then(res=>res.json())
+  .then(data=>this.setState({products:data}));
 }
  
   render(){
@@ -17,13 +48,17 @@ export default class App extends Component{
     return(
       <div >
         <Container>
-           <Navi />
+           <Navi removeFromCart={this.removeFromCart} cart={this.state.cart}/>
           
           <Row >
             <Col xs="4">
-              <CategoryList currentCategory={this.state.currentCategory} changeCategory={this.changeCategory} info={categoryInfo} />
+              <CategoryList 
+               currentCategory={this.state.currentCategory}
+                changeCategory={this.changeCategory} info={categoryInfo}
+                 />
             </Col><Col xs="8">
-             <ProductList currentCategory={this.state.currentCategory} info={productInfo} />
+             <ProductList addToCart={this.addToCart}
+              products={this.state.products} currentCategory={this.state.currentCategory} info={productInfo} />
             </Col>
             </Row>
         </Container>
